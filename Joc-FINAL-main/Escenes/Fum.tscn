@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://s8j7wf30h1co"]
+
+[ext_resource type="Texture2D" uid="uid://b4s6eqru7jdt8" path="res://Sin_título-removebg-preview.png" id="1_eagpq"]
+
+[sub_resource type="Gradient" id="Gradient_613dm"]
+offsets = PackedFloat32Array(0, 0.955357, 0.983871, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.0834309, 1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_r4wyr"]
+gradient = SubResource("Gradient_613dm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yw482"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+spread = 100.0
+flatness = 1.0
+initial_velocity_max = 1000.0
+gravity = Vector3(0, 0, 0)
+color = Color(1, 1, 1, 0.505882)
+color_ramp = SubResource("GradientTexture1D_r4wyr")
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+texture_filter = 1
+rotation = -3.14159
+amount = 30
+texture = ExtResource("1_eagpq")
+lifetime = 3.0
+speed_scale = 2.0
+process_material = SubResource("ParticleProcessMaterial_yw482")

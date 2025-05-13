@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqx58brbhe3vx"]
+
+[ext_resource type="Script" uid="uid://cg8vj4swfhcsl" path="res://Scripts/Jugador.gd" id="1_ppagg"]
+[ext_resource type="Texture2D" uid="uid://b6tmjga77dia3" path="res://racing-car-303766_960_720.webp" id="2_ppagg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ghpx"]
+radius = 239.263
+height = 531.357
+
+[node name="Jugador 1" type="CharacterBody2D"]
+scale = Vector2(-0.8255, 0.274768)
+script = ExtResource("1_ppagg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.511025, 1.33564)
+texture = ExtResource("2_ppagg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -3.14159
+shape = SubResource("CapsuleShape2D_3ghpx")

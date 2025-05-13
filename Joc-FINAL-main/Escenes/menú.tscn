@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyrwprxwfica8"]
+
+[ext_resource type="Texture2D" uid="uid://b6tmjga77dia3" path="res://racing-car-303766_960_720.webp" id="1_js5kk"]
+[ext_resource type="Script" uid="uid://dsi684truifom" path="res://Scripts/menú.gd" id="1_ktia1"]
+[ext_resource type="PackedScene" uid="uid://dag1luww646q2" path="res://Escenes/Prova 1.tscn" id="2_sff3m"]
+
+[sub_resource type="FontVariation" id="FontVariation_js5kk"]
+
+[node name="Menú" type="Node2D"]
+script = ExtResource("1_ktia1")
+escena = ExtResource("2_sff3m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(586, 327)
+texture = ExtResource("1_js5kk")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 400.0
+offset_top = 169.0
+offset_right = 639.0
+offset_bottom = 309.0
+theme_override_fonts/font = SubResource("FontVariation_js5kk")
+theme_override_font_sizes/font_size = 96
+text = "PLAY"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 452.0
+offset_top = 338.0
+offset_right = 576.0
+offset_bottom = 410.0
+theme_override_font_sizes/font_size = 46
+text = "QUIT"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

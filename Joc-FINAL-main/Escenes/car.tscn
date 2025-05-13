@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://nxo8djc3kxs5"]
+
+[ext_resource type="Script" uid="uid://br02qa4xqb665" path="res://Scripts/car.gd" id="1_xovll"]
+[ext_resource type="Texture2D" uid="uid://b6tmjga77dia3" path="res://racing-car-303766_960_720.webp" id="2_aak2k"]
+[ext_resource type="PackedScene" uid="uid://s8j7wf30h1co" path="res://Escenes/Fum.tscn" id="2_dcnvo"]
+[ext_resource type="AudioStream" uid="uid://bhlhkbuisw1fk" path="res://Audio/Throtle.ogg" id="4_vd171"]
+[ext_resource type="AudioStream" uid="uid://p8lueyu5w4im" path="res://Audio/Horn.mp3" id="5_aci7s"]
+[ext_resource type="AudioStream" uid="uid://itfxbup5n7g7" path="res://Audio/https___voicebot.su_es_sound_coche-de-derrape_.ogg" id="6_jebh3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40s5a"]
+size = Vector2(311, 134)
+
+[node name="Car" type="CharacterBody2D"]
+script = ExtResource("1_xovll")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.5, 0)
+shape = SubResource("RectangleShape2D_40s5a")
+
+[node name="Humo" parent="." instance=ExtResource("2_dcnvo")]
+position = Vector2(-132, 4)
+scale = Vector2(0.1, 0.1)
+emitting = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("2_aak2k")
+
+[node name="Throtle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_vd171")
+pitch_scale = 0.01
+
+[node name="Horn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_aci7s")
+
+[node name="Drift" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_jebh3")

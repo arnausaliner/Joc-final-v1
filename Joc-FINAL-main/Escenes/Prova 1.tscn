@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dag1luww646q2"]
+
+[ext_resource type="Texture2D" uid="uid://dy6q0gj15ssma" path="res://icon.svg" id="1_82wv1"]
+[ext_resource type="PackedScene" uid="uid://nxo8djc3kxs5" path="res://Escenes/car.tscn" id="1_b6o8y"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(883.5, 258)
+scale = Vector2(20.1328, 15.7188)
+texture = ExtResource("1_82wv1")
+
+[node name="Car" parent="." instance=ExtResource("1_b6o8y")]
+scale = Vector2(0.5, 0.5)
+steering_angle = 0.3
+V_max = 1000
+acceleration = 900
+F_friction = -55.0
+F_freno = -700
+frenada = -1000
+V_max_atras = 500
+traction_fast = 1.0
+traction_slow = 70.0
+steer_limit = 0.08
+
+[node name="Camera2D" type="Camera2D" parent="Car"]
