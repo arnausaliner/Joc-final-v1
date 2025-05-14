@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b6tmjga77dia3" path="res://racing-car-303766_960_720.webp" id="1_js5kk"]
 [ext_resource type="Script" uid="uid://dsi684truifom" path="res://Scripts/menú.gd" id="1_ktia1"]
-[ext_resource type="PackedScene" uid="uid://dag1luww646q2" path="res://Escenes/Prova 1.tscn" id="2_sff3m"]
+[ext_resource type="PackedScene" uid="uid://p5rodh16rk63" path="res://Escenes/mapa_escena.tscn" id="2_sff3m"]
 
 [sub_resource type="FontVariation" id="FontVariation_js5kk"]
 
